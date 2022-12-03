@@ -26,7 +26,7 @@ export default function Buyers() {
   const [errr,seterrr]=useState(null);
   var data = jwt_decode(Cookies.get('token'));
   useEffect(() => {
-    axios.get(`http://localhost:2000/api/allbuyers`)
+    axios.get(`https://outrageous-cow-headscarf.cyclic.app/api/allbuyers`)
     .then((result)=>{
       setproducts(result.data);    
     })

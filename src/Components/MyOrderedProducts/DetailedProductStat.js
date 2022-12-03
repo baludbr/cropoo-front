@@ -13,7 +13,7 @@ export default function DetailedProdStat(){
     var data = jwt_decode(Cookies.get('token'));
     var [data,setdata]=useState(null);
     useEffect(() => {
-        axios.post(`http://localhost:2000/api/productdata`,{productid:pid})
+        axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/productdata`,{productid:pid})
         .then((response) =>{
             setdata(response.data[0]);
         })

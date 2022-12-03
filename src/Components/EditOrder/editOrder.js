@@ -22,7 +22,7 @@ export default function EditOrder() {
   var {pid} = useParams();
   var data = jwt_decode(Cookies.get('token'));
   useEffect(() => {
-    axios.post(`http://localhost:2000/api/getproductdetails`,{id:pid})
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/getproductdetails`,{id:pid})
     .then((result)=>{
         console.log(result.data[0]);
       setproducts(result.data[0]);  
@@ -59,10 +59,10 @@ export default function EditOrder() {
     }
     var finalres={id:id,resultdata:registereddata}
     console.log(finalres);
-    axios.post(`http://localhost:2000/api/editorder`,finalres)
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/editorder`,finalres)
     .then((vaa)=>{
       navigate('/myproducts');
-      window.location.reload(false);
+      // window.location.reload(false);
     })
     .catch((err)=>{console.log(err)});
   }

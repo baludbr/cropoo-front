@@ -31,7 +31,7 @@ function MyProducts() {
 
   var data = jwt_decode(Cookies.get('token'));
   useEffect(() => {
-    axios.post(`http://localhost:2000/api/myproducts`,{"email":data.userEmail})
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/myproducts`,{"email":data.userEmail})
     .then((result)=>{
       setproducts(result.data);    
     })
@@ -43,16 +43,16 @@ function MyProducts() {
 
    function deleteorder(val){
     console.log(val);
-     axios.post(`http://localhost:2000/api/deleteorder`,{bid:val})
+     axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/deleteorder`,{bid:val})
         .then((vaa)=>{
           navigate('/myproducts');
-          window.location.reload(false);
+          // window.location.reload(false);
         })
         .catch((err)=>{console.log(err)});
     }
 
     function editorder(val){
-       axios.post(`http://localhost:2000/api/editorder`,{bid:val})
+       axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/editorder`,{bid:val})
           .then((vaa)=>{
             navigate('/myproducts');
             window.location.reload(false);

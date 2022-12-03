@@ -9,7 +9,7 @@ export default function Profile(){
     const [pdata,setpdata]=useState(null);
     useEffect(()=>{
         var data = jwt_decode(Cookies.get('token'));
-        axios.post(`http://localhost:2000/api/profileview`,{email:data.userEmail})
+        axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/profileview`,{email:data.userEmail})
         .then((result)=>{
             setpdata(result.data[0]);    
         })

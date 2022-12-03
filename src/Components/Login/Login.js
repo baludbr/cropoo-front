@@ -22,7 +22,7 @@ function Login() {
       email:mail,
       password:pwd
     }
-    axios.post(`http://localhost:2000/api/login`,logindata)
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/login`,logindata)
     .then(response=> {
       if(response.status=200){
         setCookie('token', response.data.token, { path: '/' });

@@ -26,7 +26,7 @@ function MyOrderedProducts() {
   const [errr,seterrr]=useState(null);
   var data = jwt_decode(Cookies.get('token'));
   useEffect(() => {
-    axios.post(`http://localhost:2000/api/myorders`,{"email":data.userEmail})
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/myorders`,{"email":data.userEmail})
     .then((result)=>{
 
       setproducts(result.data);    

@@ -34,7 +34,7 @@ export default function Signup() {
     }
     else{
 
-      axios.post('http://localhost:2000/api/emailexists',{email:mail}).then((result)=>{
+      axios.post('https://outrageous-cow-headscarf.cyclic.app/api/emailexists',{email:mail}).then((result)=>{
         if(result.data.length==0){
           const registerdata={
             fullname:name,
@@ -42,7 +42,7 @@ export default function Signup() {
             password:pwd,
             role:selected
           }
-          axios.post(`http://localhost:2000/api/register`,registerdata)
+          axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/register`,registerdata)
           .then(response=> {
             navigate('/login')
           })

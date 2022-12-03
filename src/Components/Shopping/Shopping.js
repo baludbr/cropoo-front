@@ -21,7 +21,7 @@ function Shopping() {
   const [errr,seterrr]=useState(null);
   // useEffect(() => {(
   useEffect(() => {
-    axios.get(`http://localhost:2000/api/products`)
+    axios.get(`https://outrageous-cow-headscarf.cyclic.app/api/products`)
     .then((result)=>{
       setproducts(result.data);    
     })

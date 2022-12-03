@@ -25,14 +25,14 @@ export default function OrderProduct() {
         productid:pid,
         reqquantity:req_quantity
     }
-    axios.post(`http://localhost:2000/api/buynow`,orderproduct)
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/buynow`,orderproduct)
     .then(response=> {
       navigate('/shopping');
     })
     .catch(e=>console.log(e))
   }
   useEffect(() => {
-    axios.post(`http://localhost:2000/api/getproductdetails`,{id:pid})
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/getproductdetails`,{id:pid})
     .then((result)=>{
       setorderproducts(result.data);    
     })

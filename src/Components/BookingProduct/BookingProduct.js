@@ -32,7 +32,7 @@ export default function BookingProduct() {
         quantity:qua_ntity,
         amount:amou_nt
     }
-    axios.post(`http://localhost:2000/api/productregister`,registereddata)
+    axios.post(`https://outrageous-cow-headscarf.cyclic.app/api/productregister`,registereddata)
     .then(response=> {
       console.log(response);
       navigate('/myproducts')
